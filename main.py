@@ -1,4 +1,3 @@
-
 import math
 from utils import *
 
@@ -7,7 +6,7 @@ args = sys.argv[1:]
 
 if len(args) == 5:
     # path to original image
-    img_path = args[0]
+    img_path = "images/" + args[0]
 
     # h - hide message OR e - extract message
     option = args[1]
@@ -60,18 +59,18 @@ if len(args) == 5:
         plot_pixel_intensity_histogram(img_path, "Modified Image")
         
         # calculate PSNR
-        psnr = calculate_PSNR("puppy.bmp", "decomp_puppy.bmp")
+        psnr = calculate_PSNR("images/puppy.bmp", "images/decomp_puppy.bmp")
         print(f"PSNR metric: {psnr}")
 
         # calculate Shannon's entropy
-        entropy_original = calculate_shannon_entropy("puppy.bmp")
-        entropy_modified = calculate_shannon_entropy("decomp_puppy.bmp")
+        entropy_original = calculate_shannon_entropy("images/puppy.bmp")
+        entropy_modified = calculate_shannon_entropy("images/decomp_puppy.bmp")
         entropy_avg = (entropy_original + entropy_modified) / 2
         print(f"Shannon's entropy: {entropy_avg}")
 
         # calculate blockiness
-        blockiness_original = calculate_blockiness("puppy.bmp")
-        blockiness_modified = calculate_blockiness("decomp_puppy.bmp")
+        blockiness_original = calculate_blockiness("images/puppy.bmp")
+        blockiness_modified = calculate_blockiness("images/decomp_puppy.bmp")
         blockiness_avg = (blockiness_original + blockiness_modified) / 2
 
         print(f"blockiness: {blockiness_avg}")
