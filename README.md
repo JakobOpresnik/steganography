@@ -18,3 +18,6 @@ Example usages:
 `python main.py puppy.bmp h message.txt 20 3`
 <br/>
 `python main.py decomp_puppy.bmp e message.txt 20 3`
+
+<br/>
+See results in `porocilo.pdf`
